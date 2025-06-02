@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EB Bill Dashboard - EB Calculator Pro</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-bolt"></i>
+                    <h1>EB Calculator Pro</h1>
+                </div>
+                <div class="user-info">
+                    <span class="welcome-text">Welcome back, User!</span>
+                    <button class="logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <div class="dashboard-title">
+                <h2><i class="fas fa-tachometer-alt"></i> Smart Grid EB Billing Dashboard</h2>
+                <p>Monitor your electricity usage and calculate bills efficiently</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Usage Statistics Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Today's Usage</h3>
+                            <span class="stat-value">0 kWh</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>This Month</h3>
+                            <span class="stat-value">0 kWh</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Estimated Bill</h3>
+                            <span class="stat-value">₹0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Usage Form -->
+                <div class="form-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-plus-circle"></i> Add Today's Usage</h3>
+                        <p>Track your daily electricity consumption</p>
+                    </div>
+
+                    <form id="usageForm" onsubmit="return submitUsage()">
+                        <div class="input-group">
+                            <label for="appliance_count">Number of Appliances Used Today</label>
+                            <div class="number-input">
+                                <button type="button" onclick="decreaseCount()" class="count-btn">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input
+                                    type="number"
+                                    id="appliance_count"
+                                    name="appliance_count"
+                                    value="1"
+                                    min="1"
+                                    max="20"
+                                    required
+                                    onchange="updateApplianceInputs()"
+                                />
+                                <button type="button" onclick="increaseCount()" class="count-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="appliance_container" class="appliances-container">
+                            <!-- Dynamically added appliance fields -->
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" onclick="addApplianceInputs()" class="btn-secondary">
+                                <i class="fas fa-refresh"></i>
+                                Update Fields
+                            </button>
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-save"></i>
+                                <span class="btn-text">Save Usage Data</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Calculate Bill Form -->
+                <div class="form-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-calculator"></i> Calculate EB Bill</h3>
+                        <p>Generate your bi-monthly electricity bill</p>
+                    </div>
+
+                    <div class="bill-info">
+                        <div class="info-item">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Current billing period: <strong>June 2025</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Last updated: <strong>Today</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Changed form action here to redirect to bill_invoice.html -->
+                    <form id="billForm" action="bill_invoice.html" method="get">
+                        <button type="submit" class="btn-primary btn-large">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span class="btn-text">Generate Bill Statement</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let applianceData = [];
+
+        function increaseCount() {
+            const input = document.getElementById("appliance_count");
+            const current = parseInt(input.value);
+            if (current < 20) {
+                input.value = current + 1;
+                updateApplianceInputs();
+            }
+        }
+
+        function decreaseCount() {
+            const input = document.getElementById("appliance_count");
+            const current = parseInt(input.value);
+            if (current > 1) {
+                input.value = current - 1;
+                updateApplianceInputs();
+            }
+        }
+
+        function updateApplianceInputs() {
+            addApplianceInputs();
+        }
+
+        function addApplianceInputs() {
+            const count = parseInt(document.getElementById("appliance_count").value);
+            const container = document.getElementById("appliance_container");
+            container.innerHTML = "";
+
+            if (count === 0) return;
+
+            for (let i = 0; i < count; i++) {
+                const applianceDiv = document.createElement("div");
+                applianceDiv.className = "appliance-item";
+                applianceDiv.innerHTML = `
+                    <div class="appliance-header">
+                        <h4><i class="fas fa-home"></i> Appliance ${i + 1}</h4>
+                        <button type="button" class="remove-appliance" onclick="removeAppliance(${i})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    <div class="appliance-inputs">
+                        <div class="input-group">
+                            <label>Appliance Name</label>
+                            <select name="appliance_name_${i}" onchange="updatePowerHint(${i})">
+                                <option value="">Select Appliance</option>
+                                <option value="LED Bulb" data-power="10">LED Bulb (10W)</option>
+                                <option value="Fan" data-power="75">Ceiling Fan (75W)</option>
+                                <option value="TV" data-power="150">Television (150W)</option>
+                                <option value="Refrigerator" data-power="300">Refrigerator (300W)</option>
+                                <option value="AC" data-power="1500">Air Conditioner (1500W)</option>
+                                <option value="Washing Machine" data-power="500">Washing Machine (500W)</option>
+                                <option value="Water Heater" data-power="2000">Water Heater (2000W)</option>
+                                <option value="Microwave" data-power="1000">Microwave (1000W)</option>
+                                <option value="Other" data-power="0">Other</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Units Consumed (kWh)</label>
+                            <input
+                                type="number"
+                                name="appliance_units_${i}"
+                                step="0.01"
+                                min="0"
+                                placeholder="Enter units"
+                                required
+                            />
+                            <small class="power-hint" id="hint_${i}">Select an appliance to see power rating</small>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(applianceDiv);
+            }
+
+            // Animate new items
+            container.querySelectorAll(".appliance-item").forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add("show");
+                }, index * 100);
+            });
+        }
+
+        function updatePowerHint(index) {
+            const select = document.querySelector(`select[name="appliance_name_${index}"]`);
+            const hint = document.getElementById(`hint_${index}`);
+            const selectedOption = select.options[select.selectedIndex];
+            const power = selectedOption.getAttribute("data-power");
+
+            if (power && power !== "0") {
+                hint.textContent = `Typical power: ${power}W - Use for calculation reference`;
+                hint.style.color = "#10b981";
+            } else {
+                hint.textContent = "Select an appliance to see power rating";
+                hint.style.color = "#6b7280";
+            }
+        }
+
+        function removeAppliance(index) {
+            const container = document.getElementById("appliance_container");
+            const items = Array.from(container.children);
+            if (index >= 0 && index < items.length) {
+                container.removeChild(items[index]);
+                // Update count input to match remaining items
+                document.getElementById("appliance_count").value = items.length - 1;
+                // Rebuild the inputs again to keep naming consistent
+                addApplianceInputs();
+            }
+        }
+
+        function submitUsage() {
+            // For now, just simulate saving and clear form
+            alert("Usage data saved successfully!");
+            document.getElementById("usageForm").reset();
+            document.getElementById("appliance_container").innerHTML = "";
+            document.getElementById("appliance_count").value = 1;
+            addApplianceInputs();
+            return false; // Prevent actual form submit
+        }
+
+        function logout() {
+            alert("Logging out...");
+            // Simulate logout logic here
+            // e.g., redirect to login page
+            window.location.href = "login.html";
+        }
+
+        // Initialize appliance inputs on page load
+        window.onload = () => {
+            addApplianceInputs();
+        };
+    </script>
+</body>
+</html>

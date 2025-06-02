@@ -1,0 +1,539 @@
+Appliances: fan,light,laptop,tv
+Date: 2025-04-01
+fan: 8.7
+light: 6.7
+laptop: 7.4
+tv: 4.5
+END
+2025-04-01: 27.299999999999997
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-02
+fan: 9.6
+light: 1.8
+laptop: 1.6
+tv: 4.7
+END
+2025-04-02: 17.7
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-03
+fan: 3.7
+light: 5.3
+laptop: 4.2
+tv: 3.6
+END
+2025-04-03: 16.8
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-04
+fan: 5.7
+light: 8.4
+laptop: 4.5
+tv: 6.3
+END
+2025-04-04: 24.900000000000002
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-05
+fan: 1.3
+light: 1.5
+laptop: 6.9
+tv: 4.4
+END
+2025-04-05: 14.1
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-06
+fan: 4.6
+light: 3.1
+laptop: 2.1
+tv: 7.1
+END
+2025-04-06: 16.9
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-07
+fan: 6.0
+light: 3.6
+laptop: 3.3
+tv: 4.7
+END
+2025-04-07: 17.599999999999998
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-08
+fan: 1.5
+light: 1.4
+laptop: 3.7
+tv: 6.3
+END
+2025-04-08: 12.899999999999999
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-09
+fan: 5.4
+light: 5.2
+laptop: 5.1
+tv: 2.7
+END
+2025-04-09: 18.400000000000002
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-10
+fan: 1.5
+light: 8.5
+laptop: 2.5
+tv: 8.2
+END
+2025-04-10: 20.7
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-11
+fan: 9.2
+light: 9.7
+laptop: 7.1
+tv: 4.4
+END
+2025-04-11: 30.4
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-12
+fan: 9.4
+light: 10.0
+laptop: 6.2
+tv: 2.3
+END
+2025-04-12: 27.9
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-13
+fan: 6.4
+light: 2.9
+laptop: 5.6
+tv: 4.0
+END
+2025-04-13: 18.9
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-14
+fan: 8.0
+light: 9.8
+laptop: 4.3
+tv: 3.7
+END
+2025-04-14: 25.8
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-15
+fan: 8.4
+light: 2.3
+laptop: 1.1
+tv: 2.9
+END
+2025-04-15: 14.7
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-16
+fan: 2.8
+light: 2.9
+laptop: 8.7
+tv: 2.0
+END
+2025-04-16: 16.4
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-17
+fan: 9.6
+light: 9.4
+laptop: 3.0
+tv: 7.5
+END
+2025-04-17: 29.5
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-18
+fan: 2.6
+light: 8.6
+laptop: 1.7
+tv: 7.9
+END
+2025-04-18: 20.799999999999997
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-19
+fan: 5.5
+light: 2.7
+laptop: 6.6
+tv: 7.5
+END
+2025-04-19: 22.299999999999997
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-20
+fan: 4.0
+light: 3.6
+laptop: 8.2
+tv: 3.4
+END
+2025-04-20: 19.2
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-21
+fan: 6.7
+light: 9.2
+laptop: 4.9
+tv: 4.8
+END
+2025-04-21: 25.599999999999998
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-22
+fan: 7.3
+light: 8.3
+laptop: 4.1
+tv: 5.4
+END
+2025-04-22: 25.1
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-23
+fan: 1.9
+light: 8.7
+laptop: 6.3
+tv: 4.1
+END
+2025-04-23: 21.0
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-24
+fan: 10.0
+light: 5.1
+laptop: 4.1
+tv: 5.2
+END
+2025-04-24: 24.4
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-25
+fan: 1.7
+light: 9.2
+laptop: 4.9
+tv: 1.9
+END
+2025-04-25: 17.7
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-26
+fan: 8.2
+light: 1.7
+laptop: 9.0
+tv: 4.0
+END
+2025-04-26: 22.9
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-27
+fan: 3.4
+light: 3.1
+laptop: 2.2
+tv: 9.4
+END
+2025-04-27: 18.1
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-28
+fan: 3.3
+light: 5.6
+laptop: 8.4
+tv: 3.0
+END
+2025-04-28: 20.299999999999997
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-29
+fan: 7.7
+light: 2.3
+laptop: 7.4
+tv: 2.7
+END
+2025-04-29: 20.099999999999998
+
+Appliances: fan,light,laptop,tv
+Date: 2025-04-30
+fan: 8.3
+light: 3.6
+laptop: 7.0
+tv: 2.8
+END
+2025-04-30: 21.7
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-01
+fan: 1.4
+light: 7.1
+laptop: 6.1
+tv: 4.4
+END
+2025-05-01: 19.0
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-02
+fan: 3.2
+light: 2.2
+laptop: 9.0
+tv: 9.9
+END
+2025-05-02: 24.3
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-03
+fan: 7.9
+light: 5.1
+laptop: 7.7
+tv: 8.7
+END
+2025-05-03: 29.4
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-04
+fan: 9.9
+light: 1.8
+laptop: 5.7
+tv: 4.8
+END
+2025-05-04: 22.200000000000003
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-05
+fan: 2.9
+light: 3.7
+laptop: 1.5
+tv: 1.7
+END
+2025-05-05: 9.799999999999999
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-06
+fan: 2.9
+light: 3.8
+laptop: 2.9
+tv: 7.8
+END
+2025-05-06: 17.4
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-07
+fan: 8.4
+light: 8.7
+laptop: 1.5
+tv: 9.8
+END
+2025-05-07: 28.400000000000002
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-08
+fan: 4.2
+light: 3.9
+laptop: 5.5
+tv: 5.3
+END
+2025-05-08: 18.9
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-09
+fan: 1.8
+light: 3.9
+laptop: 3.6
+tv: 4.0
+END
+2025-05-09: 13.3
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-10
+fan: 9.8
+light: 1.6
+laptop: 8.4
+tv: 9.2
+END
+2025-05-10: 29.0
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-11
+fan: 1.5
+light: 3.4
+laptop: 2.0
+tv: 4.2
+END
+2025-05-11: 11.100000000000001
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-12
+fan: 9.9
+light: 7.3
+laptop: 3.5
+tv: 5.2
+END
+2025-05-12: 25.9
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-13
+fan: 9.7
+light: 2.8
+laptop: 3.3
+tv: 6.7
+END
+2025-05-13: 22.5
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-14
+fan: 8.2
+light: 5.1
+laptop: 6.3
+tv: 4.1
+END
+2025-05-14: 23.699999999999996
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-15
+fan: 8.6
+light: 7.8
+laptop: 7.2
+tv: 6.0
+END
+2025-05-15: 29.599999999999998
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-16
+fan: 9.9
+light: 3.0
+laptop: 6.5
+tv: 6.5
+END
+2025-05-16: 25.9
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-17
+fan: 2.7
+light: 6.8
+laptop: 1.7
+tv: 1.5
+END
+2025-05-17: 12.7
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-18
+fan: 8.1
+light: 4.8
+laptop: 1.0
+tv: 8.2
+END
+2025-05-18: 22.099999999999998
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-19
+fan: 5.7
+light: 4.5
+laptop: 9.7
+tv: 3.2
+END
+2025-05-19: 23.099999999999998
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-20
+fan: 5.1
+light: 1.5
+laptop: 2.2
+tv: 3.8
+END
+2025-05-20: 12.600000000000001
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-21
+fan: 7.7
+light: 5.2
+laptop: 9.0
+tv: 3.5
+END
+2025-05-21: 25.4
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-22
+fan: 7.1
+light: 2.0
+laptop: 7.9
+tv: 2.7
+END
+2025-05-22: 19.7
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-23
+fan: 7.2
+light: 6.5
+laptop: 1.6
+tv: 1.8
+END
+2025-05-23: 17.099999999999998
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-24
+fan: 7.2
+light: 4.4
+laptop: 7.5
+tv: 9.6
+END
+2025-05-24: 28.700000000000003
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-25
+fan: 1.9
+light: 9.8
+laptop: 7.0
+tv: 8.6
+END
+2025-05-25: 27.300000000000004
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-26
+fan: 4.8
+light: 7.4
+laptop: 4.2
+tv: 4.6
+END
+2025-05-26: 21.0
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-27
+fan: 2.4
+light: 1.6
+laptop: 6.6
+tv: 3.8
+END
+2025-05-27: 14.399999999999999
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-28
+fan: 2.8
+light: 5.5
+laptop: 7.8
+tv: 7.5
+END
+2025-05-28: 23.6
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-29
+fan: 9.2
+light: 2.6
+laptop: 3.6
+tv: 7.6
+END
+2025-05-29: 23.0
+
+Appliances: fan,light,laptop,tv
+Date: 2025-05-30
+fan: 7.7
+light: 7.0
+laptop: 3.0
+tv: 6.5
+END
+2025-05-30: 24.2

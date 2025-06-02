@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - EB Calculator Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header-section">
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                <h1>EB Calculator Pro</h1>
+            </div>
+            <p class="tagline">Smart Energy Management Solution</p>
+        </div>
+
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Create Account</h2>
+                <p>Join us to manage your electricity bills smartly</p>
+            </div>
+
+            <form id="signupForm" onsubmit="return validateSignupForm()">
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" name="username" placeholder="Enter username" required>
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Enter password" required>
+                        <label for="password">Password</label>
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength">
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strengthBar"></div>
+                        </div>
+                        <span class="strength-text" id="strengthText">Password Strength</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
+                        <label for="confirm_password">Confirm Password</label>
+                        <button type="button" class="toggle-password" onclick="togglePassword('confirm_password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    <span class="btn-text">Create Account</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <div class="form-footer">
+                <p>Already have an account? <a href="login.html" class="link-primary">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Password visibility toggle
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const button = input.parentElement.querySelector('.toggle-password i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                button.classList.remove('fa-eye');
+                button.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                button.classList.remove('fa-eye-slash');
+                button.classList.add('fa-eye');
+            }
+        }
+
+        // Password strength checker
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            const strengthBar = document.getElementById('strengthBar');
+            const strengthText = document.getElementById('strengthText');
+            
+            let strength = 0;
+            let text = 'Weak';
+            let color = '#ff4757';
+            
+            if (password.length >= 8) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^a-zA-Z0-9]/.test(password)) strength++;
+            
+            switch(strength) {
+                case 0:
+                case 1:
+                    text = 'Weak';
+                    color = '#ff4757';
+                    break;
+                case 2:
+                case 3:
+                    text = 'Medium';
+                    color = '#ffa502';
+                    break;
+                case 4:
+                case 5:
+                    text = 'Strong';
+                    color = '#2ed573';
+                    break;
+            }
+            
+            strengthBar.style.width = (strength * 20) + '%';
+            strengthBar.style.backgroundColor = color;
+            strengthText.textContent = text;
+            strengthText.style.color = color;
+        });
+
+        function validateSignupForm() {
+            const password = document.getElementById("password").value;
+            const confirm = document.getElementById("confirm_password").value;
+            const username = document.getElementById("username").value.trim();
+
+            // Username validation
+            if (username.length < 3) {
+                showNotification("Username must be at least 3 characters long.", 'error');
+                return false;
+            }
+
+            // Password strength regex: min 8 chars, 1 uppercase, 1 lowercase, 1 special char
+            const strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+
+            if (!strongRegex.test(password)) {
+                showNotification("Password must be at least 8 characters long and include one uppercase letter, one lowercase letter, and one special character.", 'error');
+                return false;
+            }
+
+            if (password !== confirm) {
+                showNotification("Passwords do not match.", 'error');
+                return false;
+            }
+
+            // Success animation
+            const button = document.querySelector('.btn-primary');
+            button.classList.add('loading');
+            
+            setTimeout(() => {
+                showNotification("Account created successfully! Redirecting...", 'success');
+                setTimeout(() => {
+                    window.location.href = "home.html";
+                }, 1500);
+            }, 1000);
+
+            return false;
+        }
+
+        function showNotification(message, type) {
+            // Remove existing notifications
+            const existing = document.querySelector('.notification');
+            if (existing) existing.remove();
+
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => notification.classList.add('show'), 100);
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 4000);
+        }
+
+        // Input animation effects
+        document.querySelectorAll('.input-wrapper input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+            
+            // Check if input has value on page load
+            if (input.value) {
+                input.parentElement.classList.add('focused');
+            }
+        });
+    </script>
+</body>
+</html>
